@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3-Phase Separator Sizing (Rule of Thumb)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>Horizontal 3-Phase Separator Sizing</h1>
+    <p class="subtitle">Rule-of-Thumb method</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Inputs</h2>
+      <form id="sizing-form" novalidate>
+        <div class="grid">
+          <label>
+            <span>Oil flow (m³/h)</span>
+            <input type="number" id="oil_flow_m3h" name="oil_flow_m3h" step="any" min="0.000001" required />
+          </label>
+          <label>
+            <span>Water flow (m³/h)</span>
+            <input type="number" id="water_flow_m3h" name="water_flow_m3h" step="any" min="0.000001" required />
+          </label>
+          <label>
+            <span>Allowable liquid velocity (m/s)</span>
+            <input type="number" id="allowable_liquid_velocity_m_s" name="allowable_liquid_velocity_m_s" step="any" min="0.000001" required />
+          </label>
+          <label>
+            <span>L/D ratio</span>
+            <input type="number" id="L_over_D_ratio" name="L_over_D_ratio" step="any" min="0.000001" required />
+          </label>
+        </div>
+        <div class="actions">
+          <button type="submit" id="calculate-btn">Calculate</button>
+        </div>
+        <p id="error" class="error" role="alert" style="display:none;"></p>
+      </form>
+    </section>
+
+    <section id="results-card" class="card" style="display:none;">
+      <h2>Results</h2>
+      <div id="results"></div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p class="muted">Backend: FastAPI at <code>http://127.0.0.1:8000</code></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
