@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Separator Sizing Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Horizontal Three-Phase Separator Sizing Calculator</h1>
+            <p>Calculate separator dimensions using the Rule-of-Thumb method</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>Input Parameters</h2>
+                <form id="separatorForm">
+                    <div class="form-group">
+                        <label for="oilFlow">Oil Flow (m³/h)</label>
+                        <input 
+                            type="number" 
+                            id="oilFlow" 
+                            name="oilFlow" 
+                            step="0.01" 
+                            min="0.01" 
+                            required
+                            placeholder="Enter oil flow rate"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="waterFlow">Water Flow (m³/h)</label>
+                        <input 
+                            type="number" 
+                            id="waterFlow" 
+                            name="waterFlow" 
+                            step="0.01" 
+                            min="0.01" 
+                            required
+                            placeholder="Enter water flow rate"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="liquidVelocity">Allowable Liquid Velocity (m/s)</label>
+                        <input 
+                            type="number" 
+                            id="liquidVelocity" 
+                            name="liquidVelocity" 
+                            step="0.01" 
+                            min="0.01" 
+                            required
+                            placeholder="Enter allowable velocity"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ldRatio">L/D Ratio</label>
+                        <input 
+                            type="number" 
+                            id="ldRatio" 
+                            name="ldRatio" 
+                            step="0.1" 
+                            min="0.1" 
+                            required
+                            placeholder="Enter L/D ratio"
+                        >
+                    </div>
+
+                    <button type="submit" class="calculate-btn">
+                        <span class="btn-text">Calculate Separator Size</span>
+                        <span class="btn-loading" style="display: none;">Calculating...</span>
+                    </button>
+                </form>
+            </section>
+
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <h2>Calculation Results</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h3>Total Liquid Flow</h3>
+                        <div class="result-value" id="totalFlowM3h">-</div>
+                        <div class="result-unit">m³/h</div>
+                    </div>
+                    
+                    <div class="result-card">
+                        <h3>Total Liquid Flow</h3>
+                        <div class="result-value" id="totalFlowM3s">-</div>
+                        <div class="result-unit">m³/s</div>
+                    </div>
+                    
+                    <div class="result-card">
+                        <h3>Cross-sectional Area</h3>
+                        <div class="result-value" id="crossSectionalArea">-</div>
+                        <div class="result-unit">m²</div>
+                    </div>
+                    
+                    <div class="result-card">
+                        <h3>Internal Diameter</h3>
+                        <div class="result-value" id="internalDiameter">-</div>
+                        <div class="result-unit">m</div>
+                    </div>
+                    
+                    <div class="result-card">
+                        <h3>Separator Length</h3>
+                        <div class="result-value" id="separatorLength">-</div>
+                        <div class="result-unit">m</div>
+                    </div>
+                </div>
+
+                <div class="input-summary">
+                    <h3>Input Parameters Used</h3>
+                    <div class="summary-grid">
+                        <div class="summary-item">
+                            <span class="summary-label">Oil Flow:</span>
+                            <span class="summary-value" id="summaryOilFlow">-</span>
+                            <span class="summary-unit">m³/h</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Water Flow:</span>
+                            <span class="summary-value" id="summaryWaterFlow">-</span>
+                            <span class="summary-unit">m³/h</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Liquid Velocity:</span>
+                            <span class="summary-value" id="summaryVelocity">-</span>
+                            <span class="summary-unit">m/s</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">L/D Ratio:</span>
+                            <span class="summary-value" id="summaryLDRatio">-</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="error-section" id="errorSection" style="display: none;">
+                <div class="error-message">
+                    <h3>Error</h3>
+                    <p id="errorText"></p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Separator Sizing Calculator - Engineering Tool</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

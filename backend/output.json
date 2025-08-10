@@ -1,0 +1,13 @@
+{
+    "total_liquid_flow_m3h": 50.0,
+    "total_liquid_flow_m3s": 0.0139,
+    "required_cross_sectional_area_m2": 0.0463,
+    "internal_diameter_m": 0.243,
+    "separator_length_m": 0.728,
+    "input_parameters": {
+        "oil_flow_m3h": 36.0,
+        "water_flow_m3h": 14.0,
+        "allowable_liquid_velocity_m_s": 0.3,
+        "L_over_D_ratio": 3.0
+    }
+}
