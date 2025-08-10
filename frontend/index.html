@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horizontal Three-Phase Separator Sizer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Horizontal Three-Phase Separator Sizer</h1>
+
+      <form id="sizeForm">
+        <div class="form-group">
+          <label for="oilFlow">Oil Flow (m³/h)</label>
+          <input type="number" step="any" id="oilFlow" required />
+        </div>
+
+        <div class="form-group">
+          <label for="waterFlow">Water Flow (m³/h)</label>
+          <input type="number" step="any" id="waterFlow" required />
+        </div>
+
+        <div class="form-group">
+          <label for="velocity">Allowable Liquid Velocity (m/s)</label>
+          <input type="number" step="any" id="velocity" required />
+        </div>
+
+        <div class="form-group">
+          <label for="ratio">L/D Ratio</label>
+          <input type="number" step="any" id="ratio" required />
+        </div>
+
+        <button type="submit">Calculate</button>
+      </form>
+
+      <div id="result" class="card hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
