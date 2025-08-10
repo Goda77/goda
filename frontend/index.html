@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Three-Phase Separator Sizing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Horizontal Three-Phase Separator Sizing</h1>
+            <p>Calculate separator dimensions using the Rule-of-Thumb method</p>
+        </header>
+
+        <main>
+            <div class="card">
+                <h2>Input Parameters</h2>
+                <form id="separatorForm">
+                    <div class="form-group">
+                        <label for="oilFlow">Oil Flow Rate (m³/h):</label>
+                        <input type="number" id="oilFlow" name="oil_flow_m3h" step="0.1" min="0.1" required>
+                        <span class="error-message" id="oilFlowError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="waterFlow">Water Flow Rate (m³/h):</label>
+                        <input type="number" id="waterFlow" name="water_flow_m3h" step="0.1" min="0.1" required>
+                        <span class="error-message" id="waterFlowError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="liquidVelocity">Allowable Liquid Velocity (m/s):</label>
+                        <input type="number" id="liquidVelocity" name="allowable_liquid_velocity_m_s" step="0.01" min="0.01" required>
+                        <span class="error-message" id="liquidVelocityError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ldRatio">L/D Ratio:</label>
+                        <input type="number" id="ldRatio" name="L_over_D_ratio" step="0.1" min="0.1" required>
+                        <span class="error-message" id="ldRatioError"></span>
+                    </div>
+
+                    <button type="submit" id="calculateBtn">Calculate Separator Dimensions</button>
+                </form>
+            </div>
+
+            <div class="card results-card" id="resultsCard" style="display: none;">
+                <h2>Calculation Results</h2>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <label>Total Liquid Flow:</label>
+                        <span id="totalFlowM3h">-</span>
+                        <span class="unit">m³/h</span>
+                    </div>
+                    <div class="result-item">
+                        <label>Total Liquid Flow:</label>
+                        <span id="totalFlowM3s">-</span>
+                        <span class="unit">m³/s</span>
+                    </div>
+                    <div class="result-item">
+                        <label>Required Cross-Sectional Area:</label>
+                        <span id="crossSectionalArea">-</span>
+                        <span class="unit">m²</span>
+                    </div>
+                    <div class="result-item highlight">
+                        <label>Internal Diameter:</label>
+                        <span id="internalDiameter">-</span>
+                        <span class="unit">m</span>
+                    </div>
+                    <div class="result-item highlight">
+                        <label>Separator Length:</label>
+                        <span id="separatorLength">-</span>
+                        <span class="unit">m</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card error-card" id="errorCard" style="display: none;">
+                <h2>Error</h2>
+                <p id="errorMessage"></p>
+            </div>
+
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Calculating...</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>Horizontal Three-Phase Separator Sizing Tool</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

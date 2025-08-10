@@ -1,0 +1,6 @@
+{
+  "oil_flow_m3h": 36,
+  "water_flow_m3h": 14,
+  "allowable_liquid_velocity_m_s": 0.3,
+  "L_over_D_ratio": 3
+}
